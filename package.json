@@ -1,0 +1,48 @@
+{
+  "name": "sqagger",
+  "version": "0.0.1",
+  "description": "SQL+Swagger",
+  "main": "lib/server/index.js",
+  "scripts": {
+    "start": "$(npm bin)/nodemon -e js,json,yaml bin/sqagger",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levonet/sqagger.git"
+  },
+  "keywords": [
+    "sql",
+    "swagger",
+    "rest",
+    "builder"
+  ],
+  "author": "Pavlo Bashynskyi",
+  "bin": {
+    "hermione": "./bin/sqagger"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/levonet/sqagger/issues"
+  },
+  "homepage": "https://github.com/levonet/sqagger#readme",
+  "dependencies": {
+    "commander": "^3.0.1",
+    "config": "^3.2.2",
+    "knex": "^0.19.4",
+    "koa": "^2.8.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa2-swagger-ui": "^2.15.3",
+    "openapi-backend": "^2.3.4",
+    "swagger-parser": "^8.0.1"
+  },
+  "devDependencies": {
+    "mssql": "^5.1.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "nodemon": "^1.19.2",
+    "oracledb": "^4.0.1",
+    "pg": "^7.12.1",
+    "sqlite3": "^4.1.0"
+  }
+}

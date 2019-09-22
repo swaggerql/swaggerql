@@ -1,0 +1,4 @@
+config/local*
+node_modules/
+package-lock.json
+*.retry

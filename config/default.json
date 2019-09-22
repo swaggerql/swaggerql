@@ -1,0 +1,9 @@
+{
+  "client": "",
+  "connection": {},
+  "inputSpec": "openapi.yaml",
+  "port": 8000,
+  "swagger": {
+    "handle": "/api-docs"
+  }
+}
