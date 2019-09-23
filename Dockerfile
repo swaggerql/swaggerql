@@ -1,12 +1,14 @@
-FROM levonet/instantclient-node:18.3-10-slim
+ARG BASE_CONTAINER=node:10-slim
+FROM ${BASE_CONTAINER}
 
+ARG DRIVER_MODULE
 EXPOSE 8000
 WORKDIR /app
 
 ENV NODE_ENV="production"
 COPY package.json ./
 RUN yarn install && \
-    yarn add oracledb && \
+    yarn add ${DRIVER_MODULE} && \
     yarn cache clean
 
 COPY bin /app/bin
