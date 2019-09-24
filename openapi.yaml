@@ -5,6 +5,22 @@ info:
   version: "0.0.1"
 
 paths:
+  /two:
+    get:
+      summary: One plus one equals two
+      description: |
+        SELECT 1+1
+      responses:
+        200:
+          description: OK
+  /tables:
+    get:
+      summary: Show tables
+      description: |
+        SELECT * FROM pg_catalog.pg_tables
+      responses:
+        200:
+          description: OK
   /test:
     get:
       summary: Test
