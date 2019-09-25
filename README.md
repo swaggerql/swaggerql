@@ -1,10 +1,10 @@
-# SQagger
+# SwaggerQL
 
-Swagger + SQL = Simple reference microservice with transparent documentation and no coding.
+**Swagger** + S**QL** = Simple reference microservice with transparent documentation and no coding.
 
 ## Getting Started
 
-You will need to install the sqagger, and then install the appropriate database module:
+You will need to install the SwaggerQL, and then install the appropriate database module:
 - `pg` for PostgreSQL and Amazon Redshift
 - `mysql2` for MySQL
 - `mysql` for MariaDB or MySQL
@@ -13,10 +13,10 @@ You will need to install the sqagger, and then install the appropriate database 
 - `oracledb` and [Oracle instant-client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) for Odacle
 
 <details open>
-<summary><h3>Run SQagger with PostgreSQL</h3></summary>
+<summary><h3>Run SwaggerQL with PostgreSQL</h3></summary>
 
 ```sh
-npm install sqagger
+npm install swaggerql
 npm install pg
 ```
 
@@ -31,20 +31,20 @@ connection:
   database: myapp_test
 ```
 
-Run SQagger
+Run SwaggerQL
 
 ```sh
-./bin/sqagger
+./bin/swaggerql
 ```
 
 And try [http://0.0.0.0:8000](http://0.0.0.0:8000)
 </details>
 
 <details>
-<summary><h3>Run SQagger with Oracle</h3></summary>
+<summary><h3>Run SwaggerQL with Oracle</h3></summary>
 
 ```sh
-npm install sqagger
+npm install swaggerql
 npm install oracledb
 ```
 Install [Oracle instant-client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
@@ -62,10 +62,10 @@ pool:
   max: 3
 ```
 
-Run SQagger
+Run SwaggerQL
 
 ```sh
-./bin/sqagger
+./bin/swaggerql
 ```
 
 And try [http://0.0.0.0:8000](http://0.0.0.0:8000)
@@ -113,10 +113,10 @@ paths:
 
 ## CLI
 
-Run `./bin/sqagger --help` for more information.
+Run `./bin/swaggerql --help` for more information.
 
 ```
-Usage: sqagger [options]
+Usage: swaggerql [options]
 
 Options:
   -V, --version                output the version number
@@ -131,8 +131,8 @@ Options:
 
 ```sh
 # Build
-docker build --build-arg BASE_CONTAINER=levonet/instantclient-node:18.3-10-slim --build-arg DRIVER_MODULE=oracledb -t sqagger-oracledb:latest .
+docker build --build-arg BASE_CONTAINER=levonet/instantclient-node:18.3-10-slim --build-arg DRIVER_MODULE=oracledb -t swaggerql-oracledb:latest .
 
 # Run
-docker run -it --rm -p 8000:8000 -v $(pwd)/config/local.yaml:/app/config/production.yaml sqagger-oracledb:latest
+docker run -it --rm -p 8000:8000 -v $(pwd)/config/local.yaml:/app/config/production.yaml swaggerql-oracledb:latest
 ```
