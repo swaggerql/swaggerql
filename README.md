@@ -10,10 +10,10 @@ You will need to install the SwaggerQL, and then install the appropriate databas
 - `mysql` for MariaDB or MySQL
 - `sqlite3` for SQLite3
 - `mssql` for MSSQL
-- `oracledb` and [Oracle instant-client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) for Odacle
+- `oracledb` and [Oracle instant-client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) for Oracle
 
 <details open>
-<summary><h3>Run SwaggerQL with PostgreSQL</h3></summary>
+<summary><strong>Run SwaggerQL with PostgreSQL</strong></summary>
 
 ```sh
 npm install swaggerql
@@ -34,14 +34,14 @@ connection:
 Run SwaggerQL
 
 ```sh
-./bin/swaggerql
+$(npm bin)/swaggerql
 ```
 
 And try [http://0.0.0.0:8000](http://0.0.0.0:8000)
 </details>
 
 <details>
-<summary><h3>Run SwaggerQL with Oracle</h3></summary>
+<summary><strong>Run SwaggerQL with Oracle</strong></summary>
 
 ```sh
 npm install swaggerql
@@ -65,7 +65,7 @@ pool:
 Run SwaggerQL
 
 ```sh
-./bin/swaggerql
+$(npm bin)/swaggerql
 ```
 
 And try [http://0.0.0.0:8000](http://0.0.0.0:8000)
@@ -113,7 +113,7 @@ paths:
 
 ## CLI
 
-Run `./bin/swaggerql --help` for more information.
+Run `$(npm bin)/swaggerql --help` for more information.
 
 ```
 Usage: swaggerql [options]
