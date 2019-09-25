@@ -1,8 +1,11 @@
 {
   "name": "swaggerql",
   "version": "0.0.1",
-  "description": "Swagger+SQL",
+  "description": "Easily and simply convert SQL database into a REST API with Swagger documentation",
   "main": "lib/server/index.js",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "start": "bin/swaggerql",
     "dev": "$(npm bin)/nodemon -e js,json,yaml bin/swaggerql",
@@ -13,14 +16,30 @@
     "url": "git+https://github.com/levonet/swaggerql.git"
   },
   "keywords": [
-    "sql",
-    "swagger",
+    "builder",
+    "documentation",
+    "mariadb",
+    "mssql",
+    "mysql",
+    "oracle",
+    "pg",
+    "postgres",
+    "postgresql",
+    "query",
+    "redshift",
+    "reference",
     "rest",
-    "builder"
+    "service",
+    "sql",
+    "sqlite",
+    "swagger"
   ],
-  "author": "Pavlo Bashynskyi",
+  "author": {
+    "name": "Pavlo Bashynskyi",
+    "web": "https://github.com/levonet"
+  },
   "bin": {
-    "hermione": "./bin/swaggerql"
+    "swaggerql": "./bin/swaggerql"
   },
   "license": "MIT",
   "bugs": {
