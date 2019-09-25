@@ -10,7 +10,7 @@ You will need to install the SwaggerQL, and then install the appropriate databas
 - `mysql` for MariaDB or MySQL
 - `sqlite3` for SQLite3
 - `mssql` for MSSQL
-- `oracledb` and [Oracle instant-client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) for Odacle
+- `oracledb` and [Oracle instant-client](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) for Oracle
 
 <details open>
 <summary><strong>Run SwaggerQL with PostgreSQL</strong></summary>
