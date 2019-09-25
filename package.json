@@ -1,16 +1,16 @@
 {
-  "name": "sqagger",
+  "name": "swaggerql",
   "version": "0.0.1",
-  "description": "SQL+Swagger",
+  "description": "Swagger+SQL",
   "main": "lib/server/index.js",
   "scripts": {
-    "start": "bin/sqagger",
-    "dev": "$(npm bin)/nodemon -e js,json,yaml bin/sqagger",
+    "start": "bin/swaggerql",
+    "dev": "$(npm bin)/nodemon -e js,json,yaml bin/swaggerql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/levonet/sqagger.git"
+    "url": "git+https://github.com/levonet/swaggerql.git"
   },
   "keywords": [
     "sql",
@@ -20,13 +20,13 @@
   ],
   "author": "Pavlo Bashynskyi",
   "bin": {
-    "hermione": "./bin/sqagger"
+    "hermione": "./bin/swaggerql"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/levonet/sqagger/issues"
+    "url": "https://github.com/levonet/swaggerql/issues"
   },
-  "homepage": "https://github.com/levonet/sqagger#readme",
+  "homepage": "https://github.com/levonet/swaggerql#readme",
   "dependencies": {
     "commander": "^3.0.1",
     "config": "^3.2.2",
