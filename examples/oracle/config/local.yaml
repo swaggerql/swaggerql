@@ -1,0 +1,9 @@
+---
+client: oracledb
+connection:
+  user: myuser
+  password: secret
+  connectString: (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=db)(PORT=1521))(CONNECT_DATA=(SID=ORCLCDB)))
+pool:
+  min: 0
+  max: 3

@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  swaggerql:
+    build:
+      context: ../..
+      args:
+        BASE_CONTAINER: levonet/instantclient-node:18.3-10-slim
+        DRIVER_MODULE: oracledb
+        NODE_ENV: development
+    entrypoint:
+    - yarn
+    - run
+    - dev
+    depends_on:
+    - db
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./config/local.yaml:/app/config/local.yaml
+    - ./openapi.yaml:/app/openapi.yaml
+    - ../../lib:/app/lib
+  db:
+    image: store/oracle/database-enterprise:12.2.0.1-slim
+    volumes:
+    - ./setup/tnsentry.sh:/home/oracle/setup/tnsentry.sh
+    - ./scripts:/scripts
+    - ./data:/ORCL
+    # - db-oracle:/ORCL
+    ports:
+    - "1521:1521"
+# volumes:
+#   db-oracle:
