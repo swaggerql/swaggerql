@@ -1,4 +1,4 @@
-config/local*
-node_modules/
+/config/*
+!/config/default.json
+/node_modules/
 package-lock.json
-*.retry
