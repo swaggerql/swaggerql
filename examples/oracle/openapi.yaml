@@ -9,7 +9,12 @@ paths:
     post:
       summary: Add a new pet to the store
       description: |
-        INSERT INTO pet (name, status) VALUES (:name, :status)
+        DECLARE
+            petId pet.pet_id%TYPE;
+        BEGIN
+            INSERT INTO pet (name, status) VALUES (:name, :status) RETURNING pet_id INTO petId;
+            DBMS_OUTPUT.PUT_LINE (petId);
+        END;
       requestBody:
         description: Pet object that needs to be added to the store
         content:
@@ -26,12 +31,16 @@ paths:
     get:
       summary: List pets by status
       description: |
+        A custom-wrapped query
+
+        ```sql
         SELECT
             pet_id as petId,
             name,
             status
         FROM pet
         WHERE status = :status
+        ```
       parameters:
       - name: status
         in: query
