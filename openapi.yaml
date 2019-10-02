@@ -5,23 +5,28 @@ info:
   version: "0.0.1"
 
 paths:
-  /two:
-    get:
-      summary: One plus one equals two
-      description: |
-        SELECT 1+1
-      responses:
-        200:
-          description: OK
-  /tables:
-    get:
-      summary: Show tables
-      description: |
-        SELECT * FROM pg_catalog.pg_tables
-      responses:
-        200:
-          description: OK
   /test:
+    get:
+      summary: 1 + n
+      description: |
+        A custom-wrapped query
+
+        ```sql
+        SELECT 1+:n
+        ```
+      parameters:
+      - name: n
+        in: query
+        description: Number
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: OK
+  /oracle:
     get:
       summary: Test
       description: |
