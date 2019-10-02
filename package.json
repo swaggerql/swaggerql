@@ -9,7 +9,9 @@
   "scripts": {
     "start": "bin/swaggerql",
     "dev": "$(npm bin)/nodemon -e js,json,yaml bin/swaggerql",
-    "test": "$(npm bin)/mocha --reporter spec test/spec/*"
+    "lint": "$(npm bin)/eslint .",
+    "test": "npm run lint; npm run unit",
+    "unit": "$(npm bin)/mocha --reporter spec test/spec/*"
   },
   "repository": {
     "type": "git",
@@ -58,6 +60,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^6.5.1",
     "mocha": "^6.2.1",
     "mssql": "^5.1.0",
     "mysql": "^2.17.1",
