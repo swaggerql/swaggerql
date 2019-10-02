@@ -1,7 +1,7 @@
 const expect = require('chai').expect
 const sinon = require('sinon')
 const QueryBuilder = require('../../lib/query-builder')
-const dependencyDb = require('../../lib/query-builder/db')
+const dependencyDb = require('../../lib/query-builder/adapter')
 const Exception = require('../../lib/middleware/exception')
 
 describe('QueryBuilder', () => {

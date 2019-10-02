@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  swaggerql:
+    build:
+      context: ../..
+      args:
+        DRIVER_MODULE: mysql2
+        NODE_ENV: development
+    entrypoint:
+    - yarn
+    - run
+    - dev
+    depends_on:
+    - db
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./config/local.yaml:/app/config/local.yaml
+    - ./openapi.yaml:/app/openapi.yaml
+    - ../../lib:/app/lib
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+    volumes:
+    - ./scripts/00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
+    - ./data:/var/lib/mysql
+    # - db-mysql:/var/lib/mysql
+    ports:
+    - "33060:33060"
+# volumes:
+#   db-mysql:
