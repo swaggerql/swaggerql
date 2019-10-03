@@ -1,0 +1,4 @@
+---
+client: sqlite3
+connection:
+  filename: '/data/data.db'
