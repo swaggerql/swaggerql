@@ -1,0 +1,7 @@
+---
+client: mysql
+connection:
+  host: db
+  user: myuser
+  password: secret
+  database: petstore
