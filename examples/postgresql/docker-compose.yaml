@@ -5,7 +5,7 @@ services:
     build:
       context: ../..
       args:
-        DRIVER_MODULE: mysql2
+        DRIVER_MODULE: pg
         NODE_ENV: development
     entrypoint:
     - yarn
@@ -20,14 +20,16 @@ services:
     - ./openapi.yaml:/app/openapi.yaml
     - ../../lib:/app/lib
   db:
-    image: mysql:8
+    image: postgres:11-alpine
     environment:
-      MYSQL_ROOT_PASSWORD: supersecret
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: petstore
     volumes:
     - ./scripts/00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
-    - ./data:/var/lib/mysql
-    # - db-mysql:/var/lib/mysql
+    - ./data:/var/lib/postgresql/data
+    # - db-postgresql:/var/lib/postgresql/data
     ports:
-    - "33060:33060"
+    - "5432:5432"
 # volumes:
-#   db-mysql:
+#   db-postgresql:
