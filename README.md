@@ -1,5 +1,5 @@
 # SwaggerQL
-[![Build Status](https://travis-ci.org/levonet/swaggerql.svg?branch=master)](https://travis-ci.org/levonet/swaggerql)
+[![Build Status](https://travis-ci.org/swaggerql/swaggerql.svg?branch=master)](https://travis-ci.org/swaggerql/swaggerql)
 
 **Swagger** + S**QL** = Simple reference microservice with transparent documentation and no coding.
 

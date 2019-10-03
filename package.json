@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/levonet/swaggerql.git"
+    "url": "git+https://github.com/swaggerql/swaggerql.git"
   },
   "keywords": [
     "builder",
@@ -38,16 +38,16 @@
   ],
   "author": {
     "name": "Pavlo Bashynskyi",
-    "web": "https://github.com/levonet"
+    "web": "https://github.com/swaggerql"
   },
   "bin": {
     "swaggerql": "./bin/swaggerql"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/levonet/swaggerql/issues"
+    "url": "https://github.com/swaggerql/swaggerql/issues"
   },
-  "homepage": "https://github.com/levonet/swaggerql#readme",
+  "homepage": "https://github.com/swaggerql/swaggerql#readme",
   "dependencies": {
     "commander": "^3.0.1",
     "config": "^3.2.2",
