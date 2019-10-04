@@ -2,32 +2,21 @@ version: "3"
 
 services:
   swaggerql:
-    build:
-      context: ../..
-      args:
-        DRIVER_MODULE: sqlite3
-        NODE_ENV: development
+    image: swaggerql/swaggerql-sqlite
     depends_on:
     - init_db
-    entrypoint:
-    - yarn
-    - run
-    - dev
     ports:
     - "8000:8000"
     volumes:
     - ./config/local.yaml:/app/config/local.yaml
     - ./openapi.yaml:/app/openapi.yaml
-    - ./data:/data
-    # - db-sqlite:/data
-    - ../../lib:/app/lib
+    - db-sqlite:/data
   init_db:
     image: sstc/sqlite3
     command: /initdb.sh
     volumes:
     - ./scripts/initdb.sh:/initdb.sh
     - ./scripts/00_init.sql:/scripts/00_init.sql
-    - ./data:/data
-    # - db-sqlite:/data
-# volumes:
-#   db-sqlite:
+    - db-sqlite:/data
+volumes:
+  db-sqlite:

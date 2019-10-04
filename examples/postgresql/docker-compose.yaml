@@ -2,15 +2,7 @@ version: "3"
 
 services:
   swaggerql:
-    build:
-      context: ../..
-      args:
-        DRIVER_MODULE: pg
-        NODE_ENV: development
-    entrypoint:
-    - yarn
-    - run
-    - dev
+    image: swaggerql/swaggerql-postgres
     depends_on:
     - db
     ports:
@@ -18,7 +10,6 @@ services:
     volumes:
     - ./config/local.yaml:/app/config/local.yaml
     - ./openapi.yaml:/app/openapi.yaml
-    - ../../lib:/app/lib
   db:
     image: postgres:11-alpine
     environment:
@@ -27,9 +18,8 @@ services:
       POSTGRES_DB: petstore
     volumes:
     - ./scripts/00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
-    - ./data:/var/lib/postgresql/data
-    # - db-postgresql:/var/lib/postgresql/data
+    - db-postgresql:/var/lib/postgresql/data
     ports:
     - "5432:5432"
-# volumes:
-#   db-postgresql:
+volumes:
+  db-postgresql:

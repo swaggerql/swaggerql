@@ -2,7 +2,7 @@
 openapi: "3.0.1"
 info:
   title: Demo
-  version: "0.0.1"
+  version: "1.0.0"
 
 paths:
   /pet:
