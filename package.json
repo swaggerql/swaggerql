@@ -1,6 +1,6 @@
 {
   "name": "swaggerql",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Easily and simply convert SQL database into a REST API with Swagger documentation",
   "main": "lib/server/index.js",
   "engines": {
