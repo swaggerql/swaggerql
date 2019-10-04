@@ -1,5 +1,22 @@
 #!/bin/bash
 
+echo "---------------------------------------------------------------- build begin ---"
 echo "BASE_CONTAINER=$BASE_CONTAINER"
 echo "DRIVER_MODULE=$DRIVER_MODULE"
-docker build --build-arg BASE_CONTAINER=$BASE_CONTAINER --build-arg DRIVER_MODULE=$DRIVER_MODULE -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+
+docker build \
+    --build-arg BASE_CONTAINER="${BASE_CONTAINER}" \
+    --build-arg DRIVER_MODULE="${DRIVER_MODULE}" \
+    -f "${DOCKERFILE_PATH}" \
+    -t "${IMAGE_NAME}" \
+    .
+
+for tag in $(echo $DOCKER_TAG | tr "," "\n")
+do
+    new_image_name="${DOCKER_REPO}:${tag}"
+    if [ "${IMAGE_NAME}" != "${new_image_name}" ]; then
+        docker tag "${IMAGE_NAME}" "${new_image_name}"
+    fi
+done
+
+echo "------------------------------------------------------------------ build end ---"
