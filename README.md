@@ -76,9 +76,6 @@ And try [http://0.0.0.0:8000](http://0.0.0.0:8000)
 
 ### Connect to DB
 
-See [node-config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) documentation for information about naming,
-load order and format of configuration files.
-
 The [knex](https://github.com/tgriesser/knex) library is used to connect to various databases.
 The most common configuration file format is:
 
@@ -92,6 +89,9 @@ connection:
 ```
 
 More examples of connection configurations in [Knex documentation](http://knexjs.org/#Installation-client)
+
+See [node-config](https://github.com/lorenwest/node-config/wiki/Configuration-Files) documentation for information about naming,
+load order and format of configuration files.
 
 ### REST API
 
@@ -131,9 +131,15 @@ Options:
 ## Docker
 
 ```sh
-# Build
-docker build --build-arg BASE_CONTAINER=levonet/instantclient-node:18.3-10-slim --build-arg DRIVER_MODULE=oracledb -t swaggerql-oracledb:latest .
-
-# Run
-docker run -it --rm -p 8000:8000 -v $(pwd)/config/local.yaml:/app/config/production.yaml swaggerql-oracledb:latest
+docker run -it --rm -p 8000:8000 \
+        -v $(pwd)/config/local.yaml:/app/config/production.yaml \
+        -v $(pwd)/openapi.yaml:/app/openapi.yaml \
+        swaggerql/swaggerql-mysql
 ```
+
+Image variants:
+- [swaggerql/swaggerql-mysql](https://hub.docker.com/r/swaggerql/swaggerql-mysql)
+- [swaggerql/swaggerql-mariadb](https://hub.docker.com/r/swaggerql/swaggerql-mariadb)
+- [swaggerql/swaggerql-postgres](https://hub.docker.com/r/swaggerql/swaggerql-postgres)
+- [swaggerql/swaggerql-sqlite](https://hub.docker.com/r/swaggerql/swaggerql-sqlite)
+- [swaggerql/swaggerql-oracle](https://hub.docker.com/r/swaggerql/swaggerql-oracle)

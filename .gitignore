@@ -2,4 +2,4 @@
 !/config/default.json
 /examples/*/data
 /node_modules/
-package-lock.json
+*~
