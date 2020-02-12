@@ -1,11 +1,25 @@
 # SwaggerQL
 [![Build Status](https://travis-ci.org/swaggerql/swaggerql.svg?branch=master)](https://travis-ci.org/swaggerql/swaggerql)
+[![Docker swaggerql-mysql](https://img.shields.io/badge/docker-swaggerql--mysql-green)](https://hub.docker.com/r/swaggerql/swaggerql-mysql)
+[![Docker swaggerql-mariadb](https://img.shields.io/badge/docker-swaggerql--mariadb-green)](https://hub.docker.com/r/swaggerql/swaggerql-mariadb)
+[![Docker swaggerql-postgres](https://img.shields.io/badge/docker-swaggerql--postgres-green)](https://hub.docker.com/r/swaggerql/swaggerql-postgres)
+[![Docker swaggerql-oracle](https://img.shields.io/badge/docker-swaggerql--oracle-green)](https://hub.docker.com/r/swaggerql/swaggerql-oracle)
+[![Docker swaggerql-sqlite](https://img.shields.io/badge/docker-swaggerql--sqlite-green)](https://hub.docker.com/r/swaggerql/swaggerql-sqlite)
 
-**Swagger** + S**QL** = Simple reference microservice with transparent documentation and no coding.
+**Swagger** + S**QL** = Simple reference microservice with transparent documentation and no coding.  
+All you need to do is create a Swagger file and specify SQL queries in the description.
+
+When you should use it:
+- you need an internal microservice with simple queries to an existing database
+- you quickly need a prototype of a reference service
+- you need to test data in the database
+- you need a stub application with database access to test the deployment scripts
+
+![Screenshot](screenshot.png)
 
 ## Getting Started
 
-You will need to install the SwaggerQL, and then install the appropriate database module:
+Install the appropriate database module before using the SwaggerQL:
 - `pg` for PostgreSQL and Amazon Redshift
 - `mysql2` for MySQL
 - `mysql` for MariaDB or MySQL
@@ -72,6 +86,8 @@ $(npm bin)/swaggerql
 And try [http://0.0.0.0:8000](http://0.0.0.0:8000)
 </details>
 
+More examples in [the repository](https://github.com/swaggerql/swaggerql/tree/master/examples).
+
 ## Configuration
 
 ### Connect to DB
@@ -137,9 +153,9 @@ docker run -it --rm -p 8000:8000 \
         swaggerql/swaggerql-mysql
 ```
 
-Image variants:
+Available Docker containers:
 - [swaggerql/swaggerql-mysql](https://hub.docker.com/r/swaggerql/swaggerql-mysql)
 - [swaggerql/swaggerql-mariadb](https://hub.docker.com/r/swaggerql/swaggerql-mariadb)
 - [swaggerql/swaggerql-postgres](https://hub.docker.com/r/swaggerql/swaggerql-postgres)
-- [swaggerql/swaggerql-sqlite](https://hub.docker.com/r/swaggerql/swaggerql-sqlite)
 - [swaggerql/swaggerql-oracle](https://hub.docker.com/r/swaggerql/swaggerql-oracle)
+- [swaggerql/swaggerql-sqlite](https://hub.docker.com/r/swaggerql/swaggerql-sqlite)
