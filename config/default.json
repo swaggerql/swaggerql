@@ -1,4 +1,5 @@
 {
+  "logLevel": "info",
   "client": "",
   "connection": {},
   "inputSpec": "openapi.yaml",
