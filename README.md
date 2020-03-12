@@ -130,6 +130,13 @@ paths:
 
 ## CLI
 
+Configuration options can be overridden via command-line arguments or environment variables.
+Priorities are the following:
+- A command-line option has the highest priority. It overrides the environment variable and config file value.
+- An environment variable has second priority. It overrides the config file value.
+- A config file value has the lowest priority.
+- If there isn't a command-line option, environment variable or config file option specified, the default is used.
+
 Run `$(npm bin)/swaggerql --help` for more information.
 
 ```
@@ -141,8 +148,16 @@ Options:
   -p, --port <number>          http port to start server (default: 8000)
   -d, --client <name>          name of client SQL driver
   -c, --connection <dsn|json>  connection options to the appropriate database client
+  -l, --log-level <level>      logging level: debug, info, warn, error (default: "info")
   -h, --help                   output usage information
 ```
+
+Environment variables:
+- `SWAGGERQL_INPUT_SPEC` — path to specification file
+- `SWAGGERQL_PORT` — http port to start server
+- `SWAGGERQL_CLIENT` — name of client SQL driver
+- `SWAGGERQL_CONNECTION` — connection options to the appropriate database client
+- `SWAGGERQL_LOG_LEVEL` — logging level
 
 ## Docker
 
