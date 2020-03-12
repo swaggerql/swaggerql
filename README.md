@@ -15,7 +15,7 @@ When you should use it:
 - you need to test data in the database
 - you need a stub application with database access to test the deployment scripts
 
-![Screenshot](screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/swaggerql/swaggerql/master/screenshot.png)
 
 ## Getting Started
 
