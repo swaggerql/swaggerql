@@ -51,10 +51,10 @@
   "dependencies": {
     "commander": "^3.0.1",
     "config": "^3.2.2",
-    "knex": "^0.19.4",
+    "knex": "^0.20.13",
     "koa": "^2.8.1",
     "koa-bodyparser": "^4.2.1",
-    "koa2-swagger-ui": "^2.15.3",
+    "koa2-swagger-ui": "^2.16.0",
     "loglevel": "^1.6.7",
     "openapi-backend": "^2.3.4",
     "swagger-parser": "^8.0.1"
