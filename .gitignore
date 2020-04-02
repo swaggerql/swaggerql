@@ -2,5 +2,6 @@
 !/config/default.json
 /examples/*/data
 /node_modules/
+/docker-compose.yml
 *~
 ~*

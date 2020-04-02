@@ -156,7 +156,7 @@ describe('QueryBuilder', () => {
     })
 
     describe('handler', () => {
-        const ctx = {request: {}}
+        const ctx = {request: {}, get: () => {}}
         const c = {
             request: {},
             operation: {}

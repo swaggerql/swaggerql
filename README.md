@@ -122,10 +122,69 @@ paths:
     get:
       summary: One plus one equals two
       description: |
-        SELECT 1+1
+        SELECT 1 + 1
       responses:
         200:
           description: OK
+```
+
+The description can use Markdown with a specified SQL query:
+
+```yaml
+description: |
+  Add one to one
+
+  \```sql
+  SELECT 1 + 1
+  \```
+```
+
+#### Query Parameter Binding
+
+One can pass parameters to SQL query from path, query, form parameters describing in Swagger file.
+Use named bindings, such as `:name` are interpreted as values and `:name:` interpreted as identifiers.
+
+```yaml
+paths:
+  /increment:
+    get:
+      summary: Increment of N per one
+      description: |
+        SELECT 1 + :n
+      parameters:
+      - name: n
+        in: query
+        description: Number
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+      responses:
+        200:
+          description: OK
+```
+
+#### Execution options
+
+Query expression can be handled as a transaction if the client sends `X-Transaction` header.
+Sometimes that's need to release cursors in the database.
+
+```
+paths:
+  /compute:
+    get:
+      summary: Adding the results of a calculation
+      description: |
+        insert into table
+        select function()
+      parameters:
+      - name: X-Transaction
+        in: header
+        description: Run Query in transaction wrapper
+        schema:
+          type: boolean
+          default: true
 ```
 
 ## CLI
