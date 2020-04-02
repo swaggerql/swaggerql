@@ -141,7 +141,7 @@ description: |
 
 #### Query Parameter Binding
 
-One can pass parameters to SQL query from path, query, form parameters describing in Swagger file.
+You can pass parameters to SQL query from `path`, `query`, `form` parameters described in Swagger file.
 Use named bindings, such as `:name` are interpreted as values and `:name:` interpreted as identifiers.
 
 ```yaml
@@ -168,7 +168,7 @@ paths:
 #### Execution options
 
 Query expression can be handled as a transaction if the client sends `X-Transaction` header.
-Sometimes that's need to release cursors in the database.
+Sometimes there's need to release cursors in the database.
 
 ```
 paths:
