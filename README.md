@@ -130,14 +130,14 @@ paths:
 
 The description can use Markdown with a specified SQL query:
 
-```yaml
+````yaml
 description: |
   Add one to one
 
-  \```sql
+  ```sql
   SELECT 1 + 1
-  \```
-```
+  ```
+````
 
 #### Query Parameter Binding
 
@@ -170,7 +170,7 @@ paths:
 Query expression can be handled as a transaction if the client sends `X-Transaction` header.
 Sometimes there's need to release cursors in the database.
 
-```
+```yaml
 paths:
   /compute:
     get:
