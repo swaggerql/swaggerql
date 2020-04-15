@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.0 — Apr 16, 2020
+
+- Add transactions (#25)
+
 ## 0.3.0 — Mar 23, 2020
 
 - Update knex to 0.20.13 (#24)
