@@ -1,0 +1,49 @@
+---
+name: build
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+        - 10.x
+        - 14.x
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm test
+
+  docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+        - name: swaggerql-mysql
+          base: node:14-slim
+          module: mysql2
+        - name: swaggerql-mariadb
+          base: node:14-slim
+          module: mysql
+        - name: swaggerql-postgres
+          base: node:14-slim
+          module: pg
+        - name: swaggerql-sqlite
+          base: node:14-slim
+          module: sqlite3
+        - name: swaggerql-oracle
+          base: levonet/instantclient-node:19.3-10-slim
+          module: oracledb
+    steps:
+    - uses: actions/checkout@v2
+    - run: docker build --build-arg BASE_CONTAINER="${{ matrix.base }}" --build-arg DRIVER_MODULE=${{ matrix.module }} -t swaggerql/${{ matrix.name }}:${{ github.sha }} .
