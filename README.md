@@ -1,5 +1,6 @@
 # SwaggerQL
-[![Build Status](https://travis-ci.org/swaggerql/swaggerql.svg?branch=master)](https://travis-ci.org/swaggerql/swaggerql)
+[![Build Status](https://github.com/swaggerql/swaggerql/actions/workflows/build.yml/badge.svg)](https://github.com/swaggerql/swaggerql/actions/workflows/build.yml)
+[![CodeQL](https://github.com/swaggerql/swaggerql/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/swaggerql/swaggerql/actions/workflows/codeql-analysis.yml)
 [![Docker swaggerql-mysql](https://img.shields.io/badge/docker-swaggerql--mysql-green)](https://hub.docker.com/r/swaggerql/swaggerql-mysql)
 [![Docker swaggerql-mariadb](https://img.shields.io/badge/docker-swaggerql--mariadb-green)](https://hub.docker.com/r/swaggerql/swaggerql-mariadb)
 [![Docker swaggerql-postgres](https://img.shields.io/badge/docker-swaggerql--postgres-green)](https://hub.docker.com/r/swaggerql/swaggerql-postgres)
