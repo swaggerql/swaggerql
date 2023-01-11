@@ -51,7 +51,7 @@
   "dependencies": {
     "commander": "^3.0.1",
     "config": "^3.2.2",
-    "knex": "^0.20.13",
+    "knex": "^2.4.0",
     "koa": "^2.8.1",
     "koa-bodyparser": "^4.2.1",
     "koa2-swagger-ui": "^2.16.0",
